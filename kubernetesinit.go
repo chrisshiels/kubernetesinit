@@ -83,8 +83,7 @@ func repeatcommand(n int, f func () error) error {
       fmt.Printf("Exit status %d.  Retrying in %ds.\n",
                  exiterror.ExitCode(), delay)
     } else {
-      fmt.Printf("Retrying in %ds.\n",
-                 exiterror.ExitCode(), delay)
+      fmt.Printf("Retrying in %ds.\n", delay)
     }
 
     time.Sleep(time.Duration(delay) * time.Second)
