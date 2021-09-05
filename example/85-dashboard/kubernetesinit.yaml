@@ -1,0 +1,9 @@
+---
+apiVersion: kubernetesinit.config.k8s.io/v1beta1
+kind: KubernetesInit
+namespace: kubernetes-dashboard
+type: kustomize
+retryLimit: 5
+wait:
+  - rollout status deployment dashboard-metrics-scraper
+  - rollout status deployment kubernetes-dashboard
